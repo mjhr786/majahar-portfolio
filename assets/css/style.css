@@ -1,0 +1,89 @@
+:root {
+  --brand-primary: #0d6dfd48;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f8fafd;
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  background: linear-gradient(90deg, #0d6efd 60%, #6ea8fe 100%);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #0d6efd;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+  border-radius: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.btn-primary, .btn-outline-primary {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.project-card .card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.hero-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+.rounded-circle {
+  height: 150px !important;
+  width: 150px !important;
+}
+
+.h-400 {
+  height: 200px !important;
+}
+
+.footer {
+  background: #0d6efd;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.pad-top {
+  padding-top: 4rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* AOS animation overrides */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* Responsive improvements */
+@media (max-width: 767px) {
+  .hero-section { min-height: 220px; }
+  .rounded-circle { height: 80px !important; width: 80px !important; }
+  .section-title { font-size: 1.5rem; }
+}
