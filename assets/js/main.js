@@ -186,3 +186,14 @@ function openPdf(pdfPath) {
     window.open(pdfPath, '_blank');
 }
 
+// Close navbar on outside click (for mobile)
+document.addEventListener('click', function(event) {
+  const nav = document.getElementById('nav');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  if (!nav || !navbarToggler) return;
+  const isOpen = nav.classList.contains('show');
+  if (isOpen && !nav.contains(event.target) && !navbarToggler.contains(event.target)) {
+    navbarToggler.click();
+  }
+});
+
