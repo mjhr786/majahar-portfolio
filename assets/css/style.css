@@ -46,6 +46,16 @@ body {
   border: 2px solid #ff6a88;
   background: rgba(255,255,255,0.28);
 }
+.card:hover, .card:hover *, .card:hover a {
+  color: #1a237e !important;
+}
+.card:hover .card-title, .card:hover h4, .card:hover h5 {
+  color: #00376d !important;
+}
+.card:hover a {
+  color: #00376d !important;
+  text-decoration: underline;
+}
 
 .btn-primary, .btn-outline-primary {
   border-radius: 2rem;
