@@ -54,7 +54,6 @@ body {
 }
 .card:hover a {
   color: #00376d !important;
-  text-decoration: underline;
 }
 
 .btn-primary, .btn-outline-primary {
@@ -69,7 +68,7 @@ body {
 }
 .btn-primary:hover, .btn-outline-primary:hover {
   box-shadow: 0 4px 32px #ff6a8899, 0 0 16px #2575fc99;
-  background: linear-gradient(90deg, #ff6a88 80%, #2575fc 100%);
+  background: linear-gradient(90deg, #ff6a88 20%, #2575fc 100%);
   color: #fff;
   border: 2px solid #ff6a88;
 }
