@@ -1,4 +1,3 @@
-
 function toggleMenu(){
   const links = document.getElementById('nav-links');
   const btn = document.querySelector('.hamburger');
@@ -111,6 +110,59 @@ fetch('assets/data/site.json')
     document.getElementById('year').textContent = new Date().getFullYear();
   })
   .catch(err => console.error('Failed to load site.json', err));
+
+// Rotating hero subtitle effect with typing and erasing animation
+const heroRoles = ["Problem Solver", "Full Stack Developer", "Technical Lead"];
+let heroRoleIdx = 0;
+const heroRoleSpan = document.getElementById('hero-rotating-role');
+
+function typeRoleText(text, el, cb) {
+  el.textContent = '';
+  let i = 0;
+  function typeNext() {
+    if (i < text.length) {
+      el.textContent += text[i];
+      i++;
+      setTimeout(typeNext, 70);
+    } else if (cb) {
+      cb();
+    }
+  }
+  typeNext();
+}
+
+function eraseRoleText(el, cb) {
+  let text = el.textContent;
+  function eraseNext() {
+    if (text.length > 0) {
+      text = text.slice(0, -1);
+      el.textContent = text;
+      setTimeout(eraseNext, 40);
+    } else if (cb) {
+      cb();
+    }
+  }
+  eraseNext();
+}
+
+if (heroRoleSpan) {
+  function showNextRole() {
+    setTimeout(() => {
+      eraseRoleText(heroRoleSpan, () => {
+        heroRoleIdx = (heroRoleIdx + 1) % heroRoles.length;
+        setTimeout(() => {
+          typeRoleText(heroRoles[heroRoleIdx], heroRoleSpan, () => {
+            setTimeout(showNextRole, 1200);
+          });
+        }, 200);
+      });
+    }, 1000);
+  }
+  // Initial load
+  typeRoleText(heroRoles[0], heroRoleSpan, () => {
+    setTimeout(showNextRole, 1200);
+  });
+}
 
 function sendMail(e){
   e.preventDefault();
