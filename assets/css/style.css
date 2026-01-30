@@ -18,7 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 32px rgba(106,17,203,0.12);
-  border-radius: 0 0 1.2rem 1.2rem;
+  /* border-radius: 0 0 1.2rem 1.2rem; */
   position: relative;
   z-index: 1;
   color: #fff;
@@ -73,6 +73,26 @@ body {
   border: 2px solid #ff6a88;
 }
 
+.btn-gradient {
+  background: linear-gradient(90deg, #ff6a88 0%, #396afc 60%, #2948ff 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 0.75rem 2.5rem;
+  box-shadow: 0 4px 24px 0 #396afc55, 0 2px 8px #ff6a8899;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s, border 0.2s;
+  letter-spacing: 1px;
+}
+.btn-gradient:hover, .btn-gradient:focus {
+  background: linear-gradient(90deg, #ffb86c 0%, #ff6a88 60%, #396afc 100%);
+  color: #fff !important;
+  box-shadow: 0 8px 32px 0 #ff6a8899, 0 4px 16px #396afc99;
+  border: none;
+  transform: translateY(-2px) scale(1.04);
+}
+
 .project-card .card-img-top {
   height: 180px;
   object-fit: cover;
@@ -109,6 +129,7 @@ body {
 nav.navbar {
   background: linear-gradient(90deg, #6a11cb 60%, #2575fc 100%) !important;
   box-shadow: 0 2px 32px #6a11cb33;
+  border: 1px solid #8f6dff;
   border-radius: 0 0 1.2rem 1.2rem;
 }
 

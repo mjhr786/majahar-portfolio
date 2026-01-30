@@ -197,3 +197,14 @@ document.addEventListener('click', function(event) {
   }
 });
 
+// Certificate modal logic
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.classList.contains('view-certificate-btn')) {
+    const pdfPath = e.target.getAttribute('data-pdf');
+    const frame = document.getElementById('certificateFrame');
+    if (frame) {
+      frame.src = 'assets/data/' + pdfPath + '#toolbar=0';
+    }
+  }
+});
+
