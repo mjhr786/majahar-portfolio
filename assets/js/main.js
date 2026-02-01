@@ -1,4 +1,4 @@
-function toggleMenu(){
+function toggleMenu() {
   const links = document.getElementById('nav-links');
   const btn = document.querySelector('.hamburger');
   const isOpen = links.classList.toggle('show');
@@ -164,12 +164,12 @@ if (heroRoleSpan) {
   });
 }
 
-function sendMail(e){
+function sendMail(e) {
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const msg = document.getElementById('message').value.trim();
-  if(!name || !email || !msg){ alert('Please fill all fields.'); return false; }
+  if (!name || !email || !msg) { alert('Please fill all fields.'); return false; }
   const subject = encodeURIComponent(`Portfolio contact from ${name}`);
   const body = encodeURIComponent(`${msg}\n\nFrom: ${name} <${email}>`);
   const mail = document.getElementById('contact-email').textContent;
@@ -179,15 +179,15 @@ function sendMail(e){
 
 function openPdf(pdfPath) {
   console.log("Opening PDF...", pdfPath);
-    //Define the relative path to your PDF file within the project directory
-    var pdfPath = 'assets/data/' + pdfPath ; 
-    
-    // Open the PDF in a new browser tab/window
-    window.open(pdfPath, '_blank');
+  //Define the relative path to your PDF file within the project directory
+  var pdfPath = 'assets/data/' + pdfPath;
+
+  // Open the PDF in a new browser tab/window
+  window.open(pdfPath, '_blank');
 }
 
 // Close navbar on outside click (for mobile)
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   const nav = document.getElementById('nav');
   const navbarToggler = document.querySelector('.navbar-toggler');
   if (!nav || !navbarToggler) return;
@@ -198,7 +198,7 @@ document.addEventListener('click', function(event) {
 });
 
 // Certificate modal logic
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   if (e.target && e.target.classList.contains('view-certificate-btn')) {
     const pdfPath = e.target.getAttribute('data-pdf');
     const frame = document.getElementById('certificateFrame');
@@ -206,5 +206,17 @@ document.addEventListener('click', function(e) {
       frame.src = 'assets/data/' + pdfPath + '#toolbar=0';
     }
   }
+});
+
+// Close navbar when a menu item is clicked
+const navLinks = document.querySelectorAll('#nav .nav-link');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.getElementById('nav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    if (nav && nav.classList.contains('show')) {
+      navbarToggler.click();
+    }
+  });
 });
 
